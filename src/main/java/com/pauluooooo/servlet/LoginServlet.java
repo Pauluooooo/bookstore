@@ -62,6 +62,7 @@ public class LoginServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
+
     public void init() {
     }
 }

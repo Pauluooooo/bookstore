@@ -2,9 +2,12 @@ package com.pauluooooo.servlet;
 
 import com.pauluooooo.db.DBOper;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -15,7 +18,7 @@ import java.util.Date;
 public class AddUserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request,response);
+        doPost(request, response);
     }
 
     @Override
@@ -44,10 +47,10 @@ public class AddUserServlet extends HttpServlet {
             int rs = db.executeUpdate(sql, new String[]{username, userpass, role, regtime});
             if (rs > 0) {
                 out.println("插入成功！");
-                out.println("<br><a href='addUser.html>'返回</a>");
-            }else {
+                out.println("<br /><a href='addUser.html'>返回</a>");
+            } else {
                 out.println("添加新用户失败!");
-                out.println("<br><a href='addUser.html'>返回</a>");
+                out.println("<br /><a href='addUser.html'>返回");
             }
         } catch (ClassNotFoundException | SQLException e) {
             throw new RuntimeException(e);
