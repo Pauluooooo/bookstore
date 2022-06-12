@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="./js/addUser.js"></script>
+    <title>网上书店后台管理系统</title>
+</head>
+<body>
+<form method="post" name="regist" action="AddUserServlet">
+    <center>
+        <table>
+            <tr>
+                <td>
+                    <table>
+                        <tbody>
+                        <tr valign="middle">
+                            <td height=12>新增用户信息</td>
+                        </tr>
+                        <tr>
+                            <table>
+                                <tr>
+                                    <td>用户名：</td>
+                                    <td>
+                                        <input type="text" name="userName" value="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>密码：</td>
+                                    <td>
+                                        <input type="password" name="userPass" value="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>确认密码：</td>
+                                    <td>
+                                        <input type="password" name="rePass" value="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>用户类别：</td>
+                                    <td>
+                                        &nbsp;<input name="role" type="radio" value="0" checked>普通用户&nbsp;
+                                        <input name="role" type="radio" value="1">管理员
+                                    </td>
+                                </tr>
+                            </table>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <td colspan="2" align="center">
+            &nbsp;
+            <button onclick="res()" style="width:10%">重置</button>
+            <button onclick="sub()" style="width:10%">提交</button>
+        </td>
+    </center>
+</form>
+</body>
+</html>

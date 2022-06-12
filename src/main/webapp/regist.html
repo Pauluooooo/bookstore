@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>注册页面</title>
+    <script src="./js/verification.js"></script>
+</head>
+<body>
+<form method="POST" name="regist" action="RegistServlet">
+    <table style="height: 100%;width: 100%">
+        <tr align="center" valign="middle">
+            <td>
+                <table height="200">
+                    <tbody>
+                    <tr>
+                        <td colspan="3" height="40" valign="middle" align="center">
+                            <font face="黑体" size="5px" color="#196ed1" style="padding-left: 20px;
+                                 vertical-align: middle">用户注册</font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="20">&nbsp;&nbsp;&nbsp;登录名：</td>
+                        <td height="20">
+                            <input type="text" name="username" id="username" value=""
+                                   style="width: 110px" onchange="chang1(this)"></td>
+                        <td id="usName"></td>
+                    </tr>
+                    <tr>
+                        <td height="10">
+                            &nbsp;&nbsp;&nbsp;密&nbsp;&nbsp;&nbsp;码：
+                        </td>
+                        <td>
+                            <input type="password" name="password" id="password" value=""
+                                   style="width: 110px" onchange="chang2(this)"></td>
+                        <td id="ps1"></td>
+                    </tr>
+                    <tr>
+                        <td height="10">
+                            确认密码：
+                        </td>
+                        <td height="20">
+                            <input type="password" name="passwordAgain" id="passwordAgain" value=""
+                                   style="width: 110px" onchange="chang3(this)"></td>
+                        <td id="ps2"></td>
+                    </tr>
+                    <tr>
+                        <td height="20" colspan="4" align="center">
+                            <button onclick="sub()">提交</button>
+                            &nbsp;
+                            <button onclick="res()">重置</button>
+                            &nbsp;
+                        </td>
+                        <td class="login_td" align="left" width="81">
+                            <a href="login.jsp">返回</a></td>
+                    </tr>
+                </table>
+                </tbody>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
