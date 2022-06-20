@@ -1,5 +1,6 @@
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Menu</title>
     <script src="js/Mtree/MzTreeView10.js"></script>
     <style>
@@ -10,12 +11,18 @@
     </style>
     <script>
         var tree = new MzTreeView("tree");
-        tree.nodes["0_1"] = "text:网站管理";
-        tree.nodes["1_100"] = "text:图书管理";
-        tree.nodes["1_200"] = "text:用户图书";
+        tree.icons["property"] = "property.gif";
+        tree.icons["css"] = "collection.gif";
+        tree.icons["book.gif"] = "book.gif";
+        tree.icons["root.gif"] = "root.gif";
+        tree.icons["exit.gif"] = "exit.gif";
+        tree.setIconPath("js/Mtree/");
+        tree.nodes["0_1"] = "text:网站管理;icon:exit.gif";
+        tree.nodes["1_100"] = "text:图书管理;icon:book.gif";
+        tree.nodes["1_200"] = "text:用户图书;icon:root.gif";
         tree.nodes["100_1001"] = "text:添加图书;url:addBook.jsp";
         tree.nodes["100_1002"] = "text:图书信息一览;url:SearchBookAdminServlet";
-        tree.nodes["200_2001"] = "text:添加新用户;url:user.png";
+        tree.nodes["200_2001"] = "text:添加新用户;icon:book.gif";
         tree.nodes["200_2002"] = "text:用户信息一览;url:SearchUserServlet";
         tree.setTarget("frmMain");
         document.write(tree.toString());
