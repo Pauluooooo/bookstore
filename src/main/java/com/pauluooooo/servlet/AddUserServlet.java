@@ -1,6 +1,8 @@
 package com.pauluooooo.servlet;
 
 import com.pauluooooo.db.DBOper;
+import com.pauluooooo.db.UserDao;
+import com.pauluooooo.entity.User;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -34,26 +36,30 @@ public class AddUserServlet extends HttpServlet {
         Date curTime = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         String regtime = dateFormat.format(curTime);
+        User users = new User();
+        users.setUsername(username);
+        users.setUserpass(userpass);
+        users.setRole(Integer.parseInt(role));
+        users.setRegtime(regtime);
         // 获取web.xml中设置的数据库参数
         ServletContext ctx = this.getServletContext();
         String user = ctx.getInitParameter("user");
         String pwd = ctx.getInitParameter("pwd");
         String dbname = ctx.getInitParameter("dbname");
         String server = ctx.getInitParameter("server");
-        DBOper db = new DBOper();
+        UserDao dao = new UserDao();
         try {
-            db.getConn(server, dbname, user, pwd);
-            String sql = "INSERT INTO userdetail(username,userpass,role,regtime) values(?,?,?,?)";
-            int rs = db.executeUpdate(sql, new String[]{username, userpass, role, regtime});
-            if (rs > 0) {
-                out.println("插入成功！");
-                out.println("<br /><a href='addUser.html'>返回</a>");
+            dao.getConn(server, dbname, user, pwd);
+            if (dao.addUser(users)) {
+                out.println("添加用户成功！");
+                out.println("<br><a href='addUser.html'>返回</a>");
             } else {
-                out.println("添加新用户失败!");
-                out.println("<br /><a href='addUser.html'>返回");
+                out.println("添加新用户失败");
+                out.println("<br><a href='addUser.html'>返回</a>");
             }
         } catch (ClassNotFoundException | SQLException e) {
             throw new RuntimeException(e);
         }
+
     }
 }
