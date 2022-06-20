@@ -9,7 +9,28 @@
 <html>
 <head>
     <title>网上书店后台管理系统</title>
-    <script src="../js/adminLogin.js"></script>
+    <script>
+        var user = document.getElementById("username").value;
+        var pass = document.getElementById("password").value;
+
+        function loginClick() {
+            if (user == null || user === "") {
+                alert("请填写登录名");
+                document.getElementById("username").focus();
+            } else if (pass == null || pass === "") {
+                alert("请填写密码");
+                document.getElementById("password").focus();
+            } else {
+                document.Register.submit();
+            }
+        }
+
+        function res() {
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
+        }
+
+    </script>
 </head>
 <body>
 <table>
@@ -28,14 +49,14 @@
                                 <tr>
                                     <td>登录名：</td>
                                     <td>
-                                        <input type="username" value="" style="width: 110px">
+                                        <input type="text" id="username" name="username" value="" style="width: 110px">
                                     </td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>密码：</td>
                                     <td>
-                                        <input type="password" name="password" style="width: 110px">
+                                        <input type="password" id="password" name="password" style="width: 110px">
                                     </td>
                                     <td></td>
                                 </tr>
