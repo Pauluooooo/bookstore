@@ -12,7 +12,7 @@
 </head>
 <body topmargin="0px">
 <%
-    String username = (String) session.getAttribute("username");
+    String username = (String) session.getAttribute("adminuser");
     String logtime = (String) session.getAttribute("logtime");
 %>
 <div>

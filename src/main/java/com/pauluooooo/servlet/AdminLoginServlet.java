@@ -24,15 +24,15 @@ public class AdminLoginServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("UTF-8");
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         // 获取输出流
         PrintWriter out = response.getWriter();
         // 获得表单账户名密码
-        String username = request.getParameter("userName");
-        String userpass = request.getParameter("userPass");
+        String username = request.getParameter("username");
+        String userpass = request.getParameter("password");
         // 获取web.xml中设置的数据库参数
         ServletContext ctx = this.getServletContext();
         String user = ctx.getInitParameter("user");
@@ -54,7 +54,7 @@ public class AdminLoginServlet extends HttpServlet {
                 response.sendRedirect("adminMain.jsp");
             } else {
                 out.println("登录失败");
-                out.println("<br /><a href='index.html'>重新登录</a>");
+                out.println("<br /><a href='adminLogin.jsp'>重新登录</a>");
             }
         } catch (ClassNotFoundException | SQLException e) {
             throw new RuntimeException(e);

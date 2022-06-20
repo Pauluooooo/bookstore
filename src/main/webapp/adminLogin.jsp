@@ -10,10 +10,9 @@
 <head>
     <title>网上书店后台管理系统</title>
     <script>
-        var user = document.getElementById("username").value;
-        var pass = document.getElementById("password").value;
-
         function loginClick() {
+            var user = document.getElementById("username").value;
+            var pass = document.getElementById("password").value;
             if (user == null || user === "") {
                 alert("请填写登录名");
                 document.getElementById("username").focus();
@@ -39,12 +38,12 @@
             <table>
                 <tbody>
                 <tr>
-                    <td colspan="2">网上购物后台管理系统-用户登录</td>
+                    <td colspan="2">网上购物后台管理系统-管理员登录页面</td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>
-                        <form method="post" name="Register" action="AdminLoginServlet">
+                        <form method="post" name="AdminLoginServlet" action="AdminLoginServlet">
                             <table>
                                 <tr>
                                     <td>登录名：</td>
