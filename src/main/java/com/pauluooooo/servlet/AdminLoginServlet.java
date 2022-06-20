@@ -1,4 +1,4 @@
-package com.pauluooooo.servlet.admin;
+package com.pauluooooo.servlet;
 
 import com.pauluooooo.db.DBOper;
 

@@ -11,10 +11,10 @@
     <title>网上书店后台管理系统</title>
 </head>
 <frameset rows="80,*" cols="*" frameborder="no" border="0" framespacing="0">
-    <frame src="top.jsp" name="topFrame" scrolling="no" noresize="noresize" id="topFrame" title="topFrame" />
+    <frame src="admin/top.jsp" name="topFrame" scrolling="no" noresize="noresize" id="topFrame" title="topFrame" />
     <frameset cols="165,*" frameborder="no" border="0" framespacing="0">
         <frame src="leftTree.htm" name="frmLeft" scrolling="no" noresize="noresize" id="frmLeft" title="frmLeft" />
-        <frame src="../addUser.html" name="frmMain" id="frmMain" title="frmMain" />
+        <frame src="addUser.html" name="frmMain" id="frmMain" title="frmMain" />
     </frameset>
 </frameset>
 <noframes></noframes>
