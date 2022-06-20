@@ -9,11 +9,11 @@ import java.util.List;
 
 public class BookDao extends DBOper {
     public List<Book> getAllBook() {
-        List<Book> bookList = new ArrayList<>();
+        List<Book> bookList = new ArrayList<Book>();
         String sql = "SELECT * FROM books";
         try {
             ResultSet rs = this.executeQuery(sql, null);
-            if (rs.next()) {
+            while (rs.next()) {
                 Book book = new Book();
                 book.setIsbn(rs.getString("isbn"));
                 book.setBookName(rs.getString("bookName"));
