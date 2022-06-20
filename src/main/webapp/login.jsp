@@ -42,7 +42,7 @@
     String userName = "";
     if (cookies != null && cookies.length > 0) {
         for (int i = 0; i < cookies.length; i++) {
-            if (cookies[i].getName().equals("userName")) {
+            if (cookies[i].getName().equals(userName)) {
                 userName = cookies[i].getValue();
             }
         }
