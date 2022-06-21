@@ -15,6 +15,11 @@
         function ret() {
             window.parent.frmMain.location = "./booklist.jsp";
         }
+
+        function buy() {
+            var isbn = document.getElementById("isbn").value;
+            window.parent.frmMain.location = "./BuyServlet?isbn=" + isbn;
+        }
     </script>
 </head>
 <body>

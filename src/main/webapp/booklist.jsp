@@ -119,6 +119,7 @@
                         <td align="center"><%=book.getIsbn()%></td>
                         <td align="center"><%=book.getPrice()%></td>
                         <td align="center" nowrap="nowrap"><a href="book.jsp?isbn=<%=book.getIsbn()%>">查看详情&nbsp;</a></td>
+                        <td align="center" nowrap="nowrap"><a href="BuyServlet?isbn=<%=book.getIsbn()%>">购买&nbsp;</a></td>
                     </tr>
                     <%}%>
                     </tbody>
